@@ -1,11 +1,17 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import Home from './pages/Home.jsx'
+import Home from './pages/Home.tsx'
 import { BrowserRouter, Route, Routes } from 'react-router'
-import Layout from './layout/Layout.jsx'
+import Layout from './layout/Layout.tsx'
+import React from 'react'
 
-createRoot(document.getElementById('root')).render(
+const rootElement = document.getElementById('root');
+if (!rootElement) {
+  throw new Error("Root element not found");
+}
+
+createRoot(rootElement).render(
   <StrictMode>
     <BrowserRouter>
         <Routes>
