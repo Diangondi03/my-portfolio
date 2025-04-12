@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
-import { IconBase } from 'react-icons'
-import { FaLanguage } from 'react-icons/fa'
+import React, { useEffect, useState } from 'react'
+
 import { IoLanguage } from 'react-icons/io5'
-import { MdLightMode } from 'react-icons/md'
+import { MdDarkMode, MdLightMode } from 'react-icons/md'
 import { Outlet } from 'react-router'
+import { Button } from '../components/ui/button'
 
 const links = [
   { name: 'Home', path: '/' },
@@ -13,31 +13,59 @@ const links = [
 ]
 
 const Layout = () => {
-  const isSectionIndex = (index) => {
+  const [darkMode,setDarkMode] = useState(localStorage.getItem('dark-mode'))
+  useEffect(() => { 
+    const body = document.body
+    if (!darkMode){
+
+      localStorage.setItem('dark-mode', 'disabled')
+    }
+    if (darkMode === 'enabled') {
+      body.classList.add('dark')
+    }
+  }
+  , [darkMode])
+
+  const isSectionIndex = (index:number) => {
     const path = window.location.pathname
     return links.findIndex(link => link.path === path) === index
   }
   
+  const toggleDarkMode = () => {
+    const body = document.body
+    body.classList.toggle('dark')
+    localStorage.setItem('dark-mode', body.classList.contains('dark') ? 'enabled' : 'disabled')
+    setDarkMode(body.classList.contains('dark') ? 'enabled' : 'disabled')
+  }
+
   return (
     <>
-        <nav className='bg-gray-800 p-4'>
+        <nav className='p-4'>
             <ul className='flex sm:text-xl justify-center items-center sm:justify-end sm:gap-10 gap-4'>
                 {links.map((link,index) => (
                     <li key={link.name}>
-                        <a href={link.path} className={`hover:[text-shadow:0_0_8px_rgba(59,130,246,1)] text-shadow ${isSectionIndex(index) ? "text-blue-400" : "text-white"}`}>{link.name}</a>
+                        <a href={link.path} className={`hover:[text-shadow:0_0_8px_rgba(59,130,246,1)] text-shadow ${isSectionIndex(index) ? "text-blue-400" : ""}`}>{link.name}</a>
                     </li>
                 ))}
                 <li>
-                    <a href='/' className='hover:text-blue-400 text-white'>
+                    <Button variant='ghost' className=' hover:cursor-pointer'>
                         <IoLanguage/>
-                    </a>
+                      
+                    </Button>
                     
                 </li>
                 <li>
-                    <a href='/' className='hover:text-blue-400 text-white'>
-                        <MdLightMode/>
-                    </a>
+                    <Button variant='ghost' className=' hover:cursor-pointer' onClick={toggleDarkMode}>
+                        {darkMode==="enabled" ?
+                        
+                          <MdLightMode/> :
+                          <MdDarkMode/>
+                        }
+                      
+                      
+                    </Button>
                 </li>
+                
             </ul>
             
         </nav>

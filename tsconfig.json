@@ -1,0 +1,29 @@
+{
+    
+    
+    "include": [
+        "src/**/*",
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.js",
+        "src/**/*.jsx",
+        "src/**/*.json"
+    ],
+
+    "compilerOptions": {
+        "module": "ESNext", // Or "CommonJS", depending on your target, but ESNext is common with Vite
+        "esModuleInterop": true, // <--- Add or ensure this is true
+        "forceConsistentCasingInFileNames": true, // Recommended
+        "strict": true, // Recommended
+        "skipLibCheck": true, // Often useful in larger projects
+        "moduleResolution": "node",
+        "baseUrl":"./",
+        "jsx":"react",
+        "noEmit": true,
+        "allowImportingTsExtensions": true,
+        "paths": {
+            "@/*": ["src/*"]
+        }
+    }
+  }
+  
