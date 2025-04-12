@@ -40,7 +40,7 @@ const Layout = () => {
 
   return (
     <>
-        <nav className='p-4'>
+        <nav className='p-4 mb-10'>
             <ul className='flex sm:text-xl justify-center items-center sm:justify-end sm:gap-10 gap-4'>
                 {links.map((link,index) => (
                     <li key={link.name}>

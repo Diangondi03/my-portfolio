@@ -17,13 +17,10 @@
         "strict": true, // Recommended
         "skipLibCheck": true, // Often useful in larger projects
         "moduleResolution": "node",
-        "baseUrl":"./",
         "jsx":"react",
         "noEmit": true,
         "allowImportingTsExtensions": true,
-        "paths": {
-            "@/*": ["src/*"]
-        }
+        
     }
   }
   
