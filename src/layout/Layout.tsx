@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import { IoLanguage } from 'react-icons/io5'
 import { MdDarkMode, MdLightMode } from 'react-icons/md'
-import { Outlet } from 'react-router'
+import { Link, Outlet } from 'react-router'
 import { Button } from '../components/ui/button'
 
 const links = [
@@ -26,11 +26,14 @@ const Layout = () => {
   }
   , [darkMode])
 
-  const isSectionIndex = (index:number) => {
+  const getSectionIndex = () => {
     const path = window.location.pathname
-    return links.findIndex(link => link.path === path) === index
+    return links.findIndex(link => link.path === path)
   }
-  
+  const [sectionIndex, setSectionIndex] = useState(getSectionIndex())
+  const handleLinkClick = (index:number) => {
+    setSectionIndex(index)
+  }
   const toggleDarkMode = () => {
     const body = document.body
     body.classList.toggle('dark')
@@ -41,10 +44,15 @@ const Layout = () => {
   return (
     <>
         <nav className='p-4 mb-10'>
-            <ul className='flex sm:text-xl justify-center items-center sm:justify-end sm:gap-10 gap-4'>
+            <ul className='flex sm:text-xl justify-center items-center sm:justify-end sm:gap-10 gap-0'>
                 {links.map((link,index) => (
                     <li key={link.name}>
-                        <a href={link.path} className={`hover:[text-shadow:0_0_8px_rgba(59,130,246,1)] text-shadow ${isSectionIndex(index) ? "text-blue-400" : ""}`}>{link.name}</a>
+                        <Link to={link.path} onClick={() => handleLinkClick(index)}>
+                          <Button variant="link" className={`text-lg sm:text-xl hover:cursor-pointer ${sectionIndex === index ? "text-blue-400" : ""}`}>
+
+                            {link.name}
+                          </Button>
+                        </Link>
                     </li>
                 ))}
                 <li>
@@ -69,7 +77,7 @@ const Layout = () => {
             </ul>
             
         </nav>
-        <div className='min-h-screen'>
+        <div className='min-h-screen mx-5 md:mx-10'>
 
           <Outlet/>
         </div>

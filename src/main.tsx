@@ -5,6 +5,7 @@ import Home from './pages/Home.tsx'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import Layout from './layout/Layout.tsx'
 import React from 'react'
+import Projects from './pages/Projects.tsx'
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -18,7 +19,7 @@ createRoot(rootElement).render(
 
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="/projects" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
             <Route path="/education" element={<Home />} />
             <Route path="/contact" element={<Home />} />
           </Route>
