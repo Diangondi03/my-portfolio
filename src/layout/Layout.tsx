@@ -4,8 +4,11 @@ import { IoLanguage } from 'react-icons/io5'
 import { MdDarkMode, MdLightMode } from 'react-icons/md'
 import { Link, Outlet } from 'react-router'
 import { Button } from '../components/ui/button'
+import { LinkType } from '../interfaces'
 
-const links = [
+
+
+const links : LinkType[] = [
   { name: 'Home', path: '/' },
   { name: 'Projects', path: '/projects' },
   { name: 'Education', path: '/education' },
@@ -28,7 +31,12 @@ const Layout = () => {
 
   const getSectionIndex = () => {
     const path = window.location.pathname
-    return links.findIndex(link => link.path === path)
+    for (let i = 0; i < links.length; i++) {
+      if (links[i].path === path) {
+        return i
+      }
+    }
+    
   }
   const [sectionIndex, setSectionIndex] = useState(getSectionIndex())
   const handleLinkClick = (index:number) => {
