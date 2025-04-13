@@ -11,7 +11,7 @@ const Skill = ({skillName}:{skillName:string}) => {
         border border-gray-300 dark:border-gray-600
         bg-white dark:bg-gray-800
         text-gray-700 dark:text-gray-300
-        shadow-md hover:shadow-xl
+        shadow-md hover:shadow-lg hover:shadow-blue-500/50 dark:hover:shadow-blue-400/40
         transform transition-all duration-300 ease-in-out
         hover:-translate-y-1.5 hover:scale-105
         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-800
