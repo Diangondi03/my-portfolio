@@ -22,7 +22,7 @@ const Skills = () => {
     return (
         <>
             <h2 className='text-center text-3xl font-bold'>Skills</h2>
-            <div className='flex flex-wrap justify-center items-center my-4 md:my-10 gap-4'>
+            <div className='flex flex-wrap justify-center items-center my-10 md:my-20 gap-4'>
                 {skillNames.map((skill, index) => {
                     return (
                         <Skill key={index} skillName={skill} />

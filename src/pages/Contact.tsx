@@ -38,12 +38,12 @@ const Contact = () => {
             </Link>
           </div>
 
-          <div className='flex items-center space-x-4 text-gray-700'> 
+          <div className='flex items-center space-x-4'> 
              <IoIosMail className='h-12 w-12' />
             <span className='font-semibold text-2xl'>diegoagd2003@gmail.com</span> 
           </div>
 
-          <div className='flex items-center space-x-4 text-gray-700'> 
+          <div className='flex items-center space-x-4'> 
              <FaPhoneAlt className='h-12 w-12' />
             <span className='font-semibold text-2xl'>+58 4127142428</span> 
           </div>
