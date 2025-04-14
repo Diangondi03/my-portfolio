@@ -7,6 +7,7 @@ import Layout from './layout/Layout.tsx'
 import React from 'react'
 import Projects from './pages/Projects.tsx'
 import Education from './pages/Education.tsx'
+import Contact from './pages/Contact.tsx'
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -22,7 +23,7 @@ createRoot(rootElement).render(
             <Route index element={<Home />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/education" element={<Education />} />
-            <Route path="/contact" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
           </Route>
         </Routes>
        

@@ -46,7 +46,7 @@ const projectData : projectDataType[] = [
 const Projects = () => {
   return (
     <>
-        <h1 className='text-center text-5xl font-bold my-10'>My Projects</h1>
+        <h1 className='text-center text-3xl font-bold my-10'>My Projects</h1>
         <div className=' gap-4 mt-4'>
             {projectData.map((project, index) => (
                 <ProjectCard
