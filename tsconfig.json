@@ -8,7 +8,7 @@
         "src/**/*.js",
         "src/**/*.jsx",
         "src/**/*.json"
-    ],
+, "src/components/projects/ProjectCard.tsx"    ],
 
     "compilerOptions": {
         "module": "ESNext", // Or "CommonJS", depending on your target, but ESNext is common with Vite

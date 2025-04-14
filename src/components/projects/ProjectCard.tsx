@@ -1,8 +1,8 @@
 import React from 'react'
-import { Card } from '../components/ui/card';
-import { Button } from '../components/ui/button';
+import { Card } from '../ui/card';
+import { Button } from '../ui/button';
 import { IoLogoGithub } from 'react-icons/io5';
-import { projectDataType } from '../interfaces';
+import { projectDataType } from '../../interfaces';
 import { Link } from 'react-router';
 
 type ProjectCardProps = {
@@ -26,9 +26,8 @@ const ProjectCard = ({project,index}: ProjectCardProps) => {
             `}>
             <div className='w-full md:w-1/2 aspect-video bg-gradient-to-br from-muted via-background to-muted rounded-md flex items-center justify-center text-muted-foreground overflow-hidden relative group cursor-pointer'>
                 
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-muted-foreground/50 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
+                <img src={`/projects/${project.image}`} className="w-full h-full text-muted-foreground/50 group-hover:scale-110 transition-transform duration-300" />
+                
                 <span className='absolute bottom-2 left-2 text-xs bg-black/40 text-white px-1.5 py-0.5 rounded backdrop-blur-sm'>
                 Preview
                 </span>

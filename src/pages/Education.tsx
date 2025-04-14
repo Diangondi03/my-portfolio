@@ -46,7 +46,7 @@ const Education = () => {
   return (
     <>
         <h1 className='text-center text-3xl font-bold my-10'>Education</h1>
-        <VerticalTimeline>
+        <VerticalTimeline lineColor="rgb(75, 85, 255)">
             
             {EducationTimeLine.map((item, index) => (
                 <TimeLineElement
