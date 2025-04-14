@@ -1,6 +1,6 @@
 import React from 'react'
 import { VerticalTimelineElement }  from 'react-vertical-timeline-component';
-import { EducationItem } from '../../interfaces';
+import { EducationItem } from '../../utils/interfaces';
 
 type TimeLineElementProps = {
     item: EducationItem;

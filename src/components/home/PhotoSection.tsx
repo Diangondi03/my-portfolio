@@ -14,7 +14,7 @@ const PhotoSection = () => {
           <h1 className='text-center  text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mt-4 md:mt-0'>
             Diego González
           </h1>
-          <p className='text-center  text-lg sm:text-xl md:text-2xl text-gray-600 mt-2 md:mt-3'>
+          <p className='text-center  text-lg sm:text-xl md:text-2xl text-gray-600 mt-2 md:mt-3 font-bold'>
             Software Developer
           </p>
             <Button

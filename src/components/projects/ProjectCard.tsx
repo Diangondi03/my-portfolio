@@ -2,8 +2,8 @@ import React from 'react'
 import { Card } from '../ui/card';
 import { Button } from '../ui/button';
 import { IoLogoGithub } from 'react-icons/io5';
-import { projectDataType } from '../../interfaces';
-import { Link } from 'react-router';
+import { projectDataType } from '../../utils/interfaces';
+import { Link, useNavigate } from 'react-router';
 
 type ProjectCardProps = {
     project: projectDataType;
@@ -11,6 +11,7 @@ type ProjectCardProps = {
 }
 
 const ProjectCard = ({project,index}: ProjectCardProps) => {
+    const navigate = useNavigate()
   return (
     <>
         <div className={`mb-10 md:mb-16 ${index === 0 ? 'mt-0' : ''}`}>
@@ -47,6 +48,7 @@ const ProjectCard = ({project,index}: ProjectCardProps) => {
                 <Button
                     size="sm"
                     className='bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer transition-colors duration-200'
+                    onClick={()=>{navigate(`/project/${index+1}`)}}
                 >
                     View Details
                 </Button>

@@ -9,6 +9,7 @@ export interface projectDataType {
     date: string;
     image: string;
     github: string;
+    skills: string[];
 }
 
 export interface EducationItem {

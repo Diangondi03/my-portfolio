@@ -4,7 +4,7 @@ import { IoLanguage } from 'react-icons/io5'
 import { MdDarkMode, MdLightMode } from 'react-icons/md'
 import { Link, Outlet } from 'react-router'
 import { Button } from '../components/ui/button'
-import { LinkType } from '../interfaces'
+import { LinkType } from '../utils/interfaces'
 
 
 
