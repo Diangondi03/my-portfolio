@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import Home from './pages/Home.tsx'
-import { BrowserRouter, Route, Routes } from 'react-router'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router'
 import Layout from './layout/Layout.tsx'
 import React from 'react'
 import Projects from './pages/Projects.tsx'
@@ -30,6 +30,8 @@ createRoot(rootElement).render(
             <Route path="/contact" element={<Contact />} />
             <Route path="/project/:projectId" element={<Project />} />
           </Route>
+
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </IndexProvider>
        
