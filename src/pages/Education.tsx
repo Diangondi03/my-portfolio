@@ -6,7 +6,7 @@ import Universidad from "../assets/Universidad_Santa_María_logo.gif"
 import FreeCodeCamp from "../assets/freecodecamp-icon.svg"
 import UCV from "../assets/Logo_Universidad_Central_de_Venezuela.svg"
 import Udemy from "../assets/Udemy_Symbol.svg"
-import { EducationItem } from '../interfaces';
+import { EducationItem } from '../utils/interfaces';
 import TimeLineElement from '../components/education/TimeLineElement';
 
 const EducationTimeLine : EducationItem[] = [
@@ -46,7 +46,7 @@ const Education = () => {
   return (
     <>
         <h1 className='text-center text-3xl font-bold my-10'>Education</h1>
-        <VerticalTimeline>
+        <VerticalTimeline lineColor="rgb(75, 85, 255)">
             
             {EducationTimeLine.map((item, index) => (
                 <TimeLineElement
