@@ -17,8 +17,8 @@ const links : LinkType[] = [
 
 const Layout = () => {
   const [darkMode,setDarkMode] = useState(localStorage.getItem('dark-mode'))
-
   useEffect(() => { 
+    setSectionIndex(getSectionIndex())
     const body = document.body
     if (!darkMode){
 
@@ -27,6 +27,7 @@ const Layout = () => {
     if (darkMode === 'enabled') {
       body.classList.add('dark')
     }
+    
   }
   , [darkMode])
 
@@ -61,7 +62,7 @@ const Layout = () => {
               
               <Button
             variant="link"
-            className={`text-lg sm:text-xl hover:cursor-pointer transition-colors duration-200 ${sectionIndex === index ? "text-blue-400 font-semibold" : "text-foreground/80"}`}
+            className={`link text-lg sm:text-xl hover:cursor-pointer transition-colors duration-200 ${sectionIndex === index ? "text-blue-400 font-semibold" : "text-foreground/80"}`}
               >
             {link.name}
               </Button>

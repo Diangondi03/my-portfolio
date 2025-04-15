@@ -18,19 +18,17 @@ const ProjectCard = ({project,index}: ProjectCardProps) => {
     const [hasAnimated, setHasAnimated] = useState(false);
 
     useEffect(() => {
-        const currentRef = cardRef.current; // Capture ref value
+        const currentRef = cardRef.current; 
 
-        if (!currentRef) return; // Exit if ref is not attached yet
+        if (!currentRef) return; 
 
-        // Set initial state before animation (invisible and translated)
         currentRef.style.opacity = '0';
 
 
         const observer = new IntersectionObserver(
             ([entry]) => {
-                // Check if the element is intersecting and hasn't animated yet
                 if (entry.isIntersecting && !hasAnimated) {
-                    setHasAnimated(true); // Mark as animated
+                    setHasAnimated(true); 
                     animate(
                         currentRef,
                         {
@@ -41,25 +39,24 @@ const ProjectCard = ({project,index}: ProjectCardProps) => {
                         easing: 'easeInOutQuad',
                         
                 });
-                    observer.unobserve(currentRef); // Stop observing once animation is triggered
+                    observer.unobserve(currentRef); 
                 }
             },
             {
-                root: null, // Use the viewport as the root
-                rootMargin: '0px', // No margin
-                threshold: 0.2, // Trigger when 10% of the element is visible
+                root: null, 
+                rootMargin: '0px', 
+                threshold: 0.2, 
             }
         );
 
         observer.observe(currentRef);
 
-        // Cleanup function to unobserve when the component unmounts
         return () => {
             if (currentRef) {
                 observer.unobserve(currentRef);
             }
         };
-    }, [index, hasAnimated]); // Rerun effect if index changes (though unlikely needed here) or hasAnimated state changes
+    }, [index, hasAnimated]); 
 
 
   return (
@@ -67,13 +64,13 @@ const ProjectCard = ({project,index}: ProjectCardProps) => {
         <div ref={cardRef} className={`carta mb-10 md:mb-16 ${index === 0 ? 'mt-0' : ''} overflow-hidden`}>
             <Card className={`
             flex flex-col md:flex-row
-            gap-6 md:gap-10 items-center /* Vertically align items */
+            gap-6 md:gap-10 items-center 
             p-6 bg-card text-card-foreground
             border border-border rounded-lg
-            shadow-md hover:shadow-xl hover:scale-[1.02] /* Enhanced hover effect */
+            shadow-md hover:shadow-xl hover:scale-[1.02] 
             transition-all duration-300 ease-in-out
-            overflow-hidden /* Prevent content overflow on scale */
-            ${index % 2 !== 0 ? "md:flex-row-reverse" : ""} /* Alternate layout */
+            overflow-hidden 
+            ${index % 2 !== 0 ? "md:flex-row-reverse" : ""} 
             `}>
             
             <div 

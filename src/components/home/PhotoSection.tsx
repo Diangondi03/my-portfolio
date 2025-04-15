@@ -13,12 +13,16 @@ const PhotoSection = () => {
         </figure>
         <div className='flex flex-col items-center'>
           <Name/>
-          <p className='text-center  text-lg sm:text-xl md:text-2xl text-gray-600 mt-2 md:mt-3 font-bold'>
+          <p className='text-center  text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-400 mt-2 md:mt-3 font-bold'>
             Software Developer
           </p>
+            
             <Button
             onClick={()=>{
-
+              document.querySelectorAll(".link")[3].classList.remove("text-foreground/80")
+              document.querySelectorAll(".link")[3].classList.add("text-blue-400")
+              document.querySelectorAll(".link")[0].classList.remove("text-blue-400")
+              console.log(document.querySelectorAll(".link")[3])
               navigate("/contact")
             }}
             className='mt-4 md:mt-6 w-fit text-white bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg shadow-xl hover:shadow-2xl hover:shadow-blue-500/50 transform transition-all duration-300 ease-in-out hover:scale-105 hover:cursor-pointer' // Increased shadow size and opacity
