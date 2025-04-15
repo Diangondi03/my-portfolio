@@ -15,6 +15,10 @@ const IndexProvider = ({children}: any)=>{
     const getSectionIndex = () : number => {
         
         const path = window.location.pathname
+        const projectDetailRegex = /^\/project\/\d+$/;
+        if (projectDetailRegex.test(path)) {
+          return 1 // Return the index of 'Projects' or default to 0
+        }
         for (let i = 0; i < links.length; i++) {
           if (links[i].path === path) {
             return i

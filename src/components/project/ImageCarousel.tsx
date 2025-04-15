@@ -17,7 +17,7 @@ export function ImageCarousel({ images }: CarouselProps) {
   return (
     <Carousel className="w-3/4">
       <CarouselContent>
-        {images.map((image, index) => (
+        {images && images.map((image, index) => (
           <CarouselItem key={index}>
             <div className="p-1">
               <Card>
