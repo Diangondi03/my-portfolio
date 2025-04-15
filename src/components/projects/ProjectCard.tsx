@@ -37,7 +37,6 @@ const ProjectCard = ({project,index}: ProjectCardProps) => {
                         currentRef,
                         {
                         opacity: [0, 1],
-                        translateY: [500, 0],
                         scale: [0, 1],
                         duration: 500,
                         easing: 'easeInOutQuad',
