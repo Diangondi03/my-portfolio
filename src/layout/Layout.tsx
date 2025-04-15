@@ -17,6 +17,7 @@ const links : LinkType[] = [
 
 const Layout = () => {
   const [darkMode,setDarkMode] = useState(localStorage.getItem('dark-mode'))
+
   useEffect(() => { 
     const body = document.body
     if (!darkMode){
@@ -68,12 +69,12 @@ const Layout = () => {
           </li>
             ))}
             <li>
-          <Button variant='ghost' size="icon" className='hover:cursor-pointer text-xl'>
+          <Button variant='ghost' size="icon" className='hover:cursor-pointer text-xl rounded-full'>
             <IoLanguage />
           </Button>
             </li>
             <li>
-          <Button variant='ghost' size="icon" className='hover:cursor-pointer text-xl' onClick={toggleDarkMode}>
+          <Button variant='ghost' size="icon" className='hover:cursor-pointer text-xl rounded-full' onClick={toggleDarkMode}>
             {darkMode === "enabled" ?
               <MdLightMode /> : 
               <MdDarkMode />  

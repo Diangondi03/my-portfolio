@@ -40,12 +40,12 @@ const Contact = () => {
 
           <div className='flex items-center space-x-4'> 
              <IoIosMail className='h-12 w-12' />
-            <span className='font-semibold text-2xl'>diegoagd2003@gmail.com</span> 
+            <span className='font-semibold text-xl md:text-2xl'>diegoagd2003@gmail.com</span> 
           </div>
 
           <div className='flex items-center space-x-4'> 
              <FaPhoneAlt className='h-12 w-12' />
-            <span className='font-semibold text-2xl'>+58 4127142428</span> 
+            <span className='font-semibold text-xl md:text-2xl'>+58 4127142428</span> 
           </div>
         </div>
     </>

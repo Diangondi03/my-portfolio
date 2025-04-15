@@ -122,5 +122,6 @@
 .dark img{
   filter: opacity(0.9);
 }
-
-
+.dark img:hover{
+  filter: opacity(1);
+}

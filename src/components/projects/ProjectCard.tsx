@@ -75,9 +75,14 @@ const ProjectCard = ({project,index}: ProjectCardProps) => {
             overflow-hidden /* Prevent content overflow on scale */
             ${index % 2 !== 0 ? "md:flex-row-reverse" : ""} /* Alternate layout */
             `}>
-            <div className='w-full md:w-1/2 aspect-video bg-gradient-to-br from-muted via-background to-muted rounded-md flex items-center justify-center text-muted-foreground overflow-hidden relative group cursor-pointer'>
+            
+            <div 
+            onClick={()=>{navigate(`/project/${index+1}`)}}
+            className='w-full md:w-1/2 aspect-video bg-gradient-to-br from-muted via-background to-muted rounded-md flex items-center justify-center text-muted-foreground overflow-hidden relative group cursor-pointer'>
                 
-                <img src={`/projects/${project.images[0]}`} className="w-full h-full text-muted-foreground/50 group-hover:scale-110 transition-transform duration-300" />
+                <img 
+                src={`/projects/${project.images[0]}`} 
+                className="w-full h-full text-muted-foreground/50 group-hover:scale-110 transition-transform duration-300" />
                 
                 <span className='absolute bottom-2 left-2 text-xs bg-black/40 text-white px-1.5 py-0.5 rounded backdrop-blur-sm'>
                 Preview
