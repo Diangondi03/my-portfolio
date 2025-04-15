@@ -52,38 +52,35 @@ const Layout = () => {
   return (
     <>
         <nav className='p-4 mb-10'>
-            <ul className='flex sm:text-xl justify-center items-center sm:justify-end sm:gap-10 gap-0'>
-                {links.map((link,index) => (
-                    <li key={link.name}>
-                        <Link to={link.path} onClick={() => handleLinkClick(index)}>
-                          <Button variant="link" className={`text-lg sm:text-xl hover:cursor-pointer ${sectionIndex === index ? "text-blue-400" : ""}`}>
-
-                            {link.name}
-                          </Button>
-                        </Link>
-                    </li>
-                ))}
-                <li>
-                    <Button variant='ghost' className=' hover:cursor-pointer'>
-                        <IoLanguage/>
-                      
-                    </Button>
-                    
-                </li>
-                <li>
-                    <Button variant='ghost' className=' hover:cursor-pointer' onClick={toggleDarkMode}>
-                        {darkMode==="enabled" ?
-                        
-                          <MdLightMode/> :
-                          <MdDarkMode/>
-                        }
-                      
-                      
-                    </Button>
-                </li>
-                
-            </ul>
-            
+          
+          <ul className='flex justify-center items-center gap-4 flex-wrap sm:justify-end sm:gap-6 md:gap-10'>
+            {links.map((link, index) => (
+          <li key={link.name}>
+            <Link to={link.path} onClick={() => handleLinkClick(index)}>
+              
+              <Button
+            variant="link"
+            className={`text-lg sm:text-xl hover:cursor-pointer transition-colors duration-200 ${sectionIndex === index ? "text-blue-400 font-semibold" : "text-foreground/80"}`}
+              >
+            {link.name}
+              </Button>
+            </Link>
+          </li>
+            ))}
+            <li>
+          <Button variant='ghost' size="icon" className='hover:cursor-pointer text-xl'>
+            <IoLanguage />
+          </Button>
+            </li>
+            <li>
+          <Button variant='ghost' size="icon" className='hover:cursor-pointer text-xl' onClick={toggleDarkMode}>
+            {darkMode === "enabled" ?
+              <MdLightMode /> : 
+              <MdDarkMode />  
+            }
+          </Button>
+            </li>
+          </ul>
         </nav>
         <div className='min-h-screen mx-5 md:mx-10'>
 
