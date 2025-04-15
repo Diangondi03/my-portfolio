@@ -2,6 +2,7 @@ import React from 'react'
 import Photo from '../../assets/photo.png'
 import { Button } from '../ui/button'
 import { useNavigate } from 'react-router'
+import { Name } from './Name'
 
 const PhotoSection = () => {
   const navigate = useNavigate()
@@ -11,9 +12,7 @@ const PhotoSection = () => {
           <img src={Photo} alt="Diego González" className="" />
         </figure>
         <div className='flex flex-col items-center'>
-          <h1 className='text-center  text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mt-4 md:mt-0'>
-            Diego González
-          </h1>
+          <Name/>
           <p className='text-center  text-lg sm:text-xl md:text-2xl text-gray-600 mt-2 md:mt-3 font-bold'>
             Software Developer
           </p>
