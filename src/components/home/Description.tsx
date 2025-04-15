@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { LanguageContext } from '../../context/LanguageContext'
 
 const Description = () => {
+  const {t} = useContext(LanguageContext)
   return (
     <>
         <p className='text-center text-lg md:text-2xl px-10 md:px-20 lg:px-40  my-10 md:my-20'>
-            Hello! I'm a software engineer passionate about creating efficient and scalable solutions. I enjoy tackling challenging problems and continuously learning new technologies.
+            {t("home:Description")}
         </p>
         
     </>

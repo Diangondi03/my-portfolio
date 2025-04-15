@@ -1,10 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { Card } from '../ui/card';
 import { Button } from '../ui/button';
 import { IoLogoGithub } from 'react-icons/io5';
 import { projectDataType } from '../../utils/interfaces';
 import { Link, useNavigate } from 'react-router';
 import { animate } from 'animejs';
+import { LanguageContext } from '../../context/LanguageContext';
 
 type ProjectCardProps = {
     project: projectDataType;
@@ -16,6 +17,9 @@ const ProjectCard = ({project,index}: ProjectCardProps) => {
 
     const cardRef = useRef<HTMLDivElement>(null);
     const [hasAnimated, setHasAnimated] = useState(false);
+
+    // @ts-ignore
+    const {t} = useContext(LanguageContext)
 
     useEffect(() => {
         const currentRef = cardRef.current; 
@@ -88,12 +92,12 @@ const ProjectCard = ({project,index}: ProjectCardProps) => {
             </div>
 
             <div className='w-full md:w-1/2 flex flex-col justify-center'> 
-                <h2 className='text-xl md:text-2xl font-semibold mb-2'>{project.name}</h2>
+                <h2 className='text-xl md:text-2xl font-semibold mb-2'>{t(`project:name:${index+1}`)}</h2>
                 <p className='text-xs text-muted-foreground mb-3'>
-                {project.date} 
+                {t(`project:date:${index+1}`)}
                 </p>
                 <p className='text-muted-foreground text-sm md:text-base mb-4'>
-                {project.description}
+                {t(`project:description:${index+1}`)}
                 </p>
                 
                 <div className="mt-auto flex items-center gap-2 self-start">
@@ -102,7 +106,7 @@ const ProjectCard = ({project,index}: ProjectCardProps) => {
                     className='bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer transition-colors duration-200'
                     onClick={()=>{navigate(`/project/${index+1}`)}}
                 >
-                    View Details
+                    {t("projects:Details")}
                 </Button>
                 <Link to={project.github} target="_blank" rel="noopener noreferrer">
 

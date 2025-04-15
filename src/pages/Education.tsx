@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import '../../node_modules/react-vertical-timeline-component/style.min.css';
 import Universidad from "../assets/Universidad_Santa_María_logo.gif"
@@ -7,6 +7,9 @@ import UCV from "../assets/Logo_Universidad_Central_de_Venezuela.svg"
 import Udemy from "../assets/Udemy_Symbol.svg"
 import { EducationItem } from '../utils/interfaces';
 import TimeLineElement from '../components/education/TimeLineElement';
+import { LanguageContext } from '../context/LanguageContext';
+import { Button } from '../components/ui/button';
+import { Link, useNavigate } from 'react-router';
 
 const EducationTimeLine : EducationItem[] = [
     {
@@ -42,21 +45,42 @@ const EducationTimeLine : EducationItem[] = [
 ]
 
 const Education = () => {
-  return (
-    <>
-        <h1 className='text-center text-4xl font-bold my-10'>Education</h1>
-        <VerticalTimeline lineColor="rgb(75, 85, 255)">
-            
-            {EducationTimeLine.map((item, index) => (
-                <TimeLineElement
-                    key={index}
-                    item={item}
-                />
-            ))}
-            
-        </VerticalTimeline>
-    </>
-  )
+    //@ts-ignore
+    const {t} = useContext(LanguageContext)
+    const navigate = useNavigate()
+    return (
+        <>
+            <h1 className='text-center text-4xl font-bold my-10'>{t("education:title")}</h1>
+
+            <VerticalTimeline lineColor="rgb(75, 85, 255)">
+                
+                {EducationTimeLine.map((item, index) => (
+                    <TimeLineElement
+                        key={index}
+                        index={index}
+                        item={item}
+                    />
+                ))}
+                
+            </VerticalTimeline>
+            <p className='text-center text-xl my-10'>
+                {t("education:Check")}
+                <Link
+                to={"https://www.linkedin.com/in/diego-gonzalez-developer/details/certifications/"}
+                target='_blank'
+                >
+                <Button
+                    
+                    variant="link"
+                    rel="noopener noreferrer"
+                    className="text-indigo-600 dark:text-cyan-300 hover:text-indigo-800 hover:dark:text-cyan-600 hover:underline text-xl p-0 m-0 cursor-pointer"
+                    >
+                    LinkedIn
+                </Button>
+                </Link>
+            </p>
+        </>
+    )
 }
 
 export default Education

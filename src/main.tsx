@@ -9,7 +9,9 @@ import Projects from './pages/Projects.tsx'
 import Education from './pages/Education.tsx'
 import Contact from './pages/Contact.tsx'
 import Project from './pages/Project.tsx'
-import { IndexProvider } from './IndexContext.tsx'
+import { IndexProvider } from './context/IndexContext.tsx'
+import "./i18.ts"
+import { LanguageProvider } from './context/LanguageContext.tsx'
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -19,6 +21,8 @@ if (!rootElement) {
 createRoot(rootElement).render(
   <StrictMode>
     <BrowserRouter>
+      <LanguageProvider>
+
       <IndexProvider>
 
         <Routes>
@@ -35,6 +39,7 @@ createRoot(rootElement).render(
         </Routes>
       </IndexProvider>
        
+      </LanguageProvider>
       
     </BrowserRouter>
   </StrictMode>,

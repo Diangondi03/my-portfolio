@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import { EducationItem } from '../../utils/interfaces';
+import { LanguageContext } from '../../context/LanguageContext';
 
 type TimeLineElementProps = {
     item: EducationItem;
+    index:number
 }
-const TimeLineElement = ({item}: TimeLineElementProps) => {
+const TimeLineElement = ({item,index}: TimeLineElementProps) => {
+  //@ts-ignore
+  const {t} = useContext(LanguageContext)
   return (
     <VerticalTimelineElement
             contentStyle={{ background: 'rgb(75, 85, 99)'}} 
@@ -14,9 +18,12 @@ const TimeLineElement = ({item}: TimeLineElementProps) => {
             iconStyle={{ background: 'white', border: '2px solid rgb(209 213 219)' }} 
             icon={<img src={item.icon} className='rounded-full w-full h-full'/>}
           >
-            <h3 className="vertical-timeline-element-title text-2xl font-bold text-white">{item.title}</h3>
+            <h3 className="vertical-timeline-element-title text-2xl font-bold text-white">
+            {t(`education:name:${index+1}`)}
+
+            </h3>
             <p className='text-white'>
-              {item.skills}
+              {t(`education:description:${index+1}`)}
             </p>
     </VerticalTimelineElement>
   )

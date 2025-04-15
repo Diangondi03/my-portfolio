@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createContext} from "react";
-import { LinkType } from "./utils/interfaces";
+import { LinkType } from "../utils/interfaces";
 const IndexContext = createContext({sectionIndex:0,handleLinkClick:(index:number):void=>{}})
 
 const links : LinkType[] = [
