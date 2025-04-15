@@ -16,31 +16,41 @@ const EducationTimeLine : EducationItem[] = [
         date: "2021 - 2026",
         title: "Systems Engineering - Santa María University",
         skills: "Systems Engineering, Software Development, Web Development, Mobile Development, Data Science",
-        icon: Universidad
+        icon: Universidad,
+        courseLink:"https://usm.edu.ve/ingenieria-en-sistemas/",
+        pageLink:"https://usm.edu.ve"
     },
     {
         date: "2025",
         title: "Scientific Computing with Python - FreeCodeCamp",
         skills: "Data Science, Machine Learning, Python Programming",
-        icon: FreeCodeCamp
+        icon: FreeCodeCamp,
+        courseLink:"https://www.freecodecamp.org/learn/scientific-computing-with-python/",
+        pageLink:"https://www.freecodecamp.org"
     },
     {
         date: "2024",
         title: "Relational Database - FreeCodeCamp",
         skills: "Database Design, SQL Programming",
-        icon: FreeCodeCamp
+        icon: FreeCodeCamp,
+        courseLink:"",
+        pageLink:"https://www.freecodecamp.org"
     },
     {
         date: "2023 - 2024",
-        title: "Inglés (Adultos) como lengua extranjera - FUNDEIM",
+        title: "Inglés (Adultos) como lengua extranjera - FUNDEIM (UCV)",
         skills: "English Language, Communication Skills",
-        icon: UCV
+        icon: UCV,
+        courseLink:"https://fundeim.com",
+        pageLink:"https://fundeim.com"
     },
     {
         date: "2023",
         title: "The Web Development Bootcamp 2023 - UDEMY",
         skills: "Full Stack Web Development, HTML, CSS, JavaScript, Node.js, Express.js, MongoDB",
-        icon: Udemy
+        icon: Udemy,
+        courseLink:"https://www.udemy.com/course/the-web-developer-bootcamp/",
+        pageLink:"https://www.udemy.com"
     }
 ]
 
@@ -50,7 +60,7 @@ const Education = () => {
     const navigate = useNavigate()
     return (
         <>
-            <h1 className='text-center text-4xl font-bold my-10'>{t("education:title")}</h1>
+            <h1 className='text-center text-4xl font-bold my-10'>{t("education:Title")}</h1>
 
             <VerticalTimeline lineColor="rgb(75, 85, 255)">
                 

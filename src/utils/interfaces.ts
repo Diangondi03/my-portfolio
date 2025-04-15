@@ -17,4 +17,6 @@ export interface EducationItem {
     title: string;
     skills: string;
     icon: string;
+    courseLink: string;
+    pageLink: string;
 }

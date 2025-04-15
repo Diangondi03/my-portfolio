@@ -56,7 +56,7 @@ const resources = {
             "1":"Systems Engineering - Santa María University",
             "2":"Scientific Computing with Python - FreeCodeCamp",
             "3":"Relational Database - FreeCodeCamp",
-            "4":"Inglés (Adultos) como lengua extranjera - FUNDEIM",
+            "4":"Inglés (Adultos) como lengua extranjera - FUNDEIM (UCV)",
             "5":"The Web Development Bootcamp - UDEMY",
         },
         description:{
@@ -126,12 +126,12 @@ const resources = {
         "Github":"Ver en Github"
     },
     education:{
-        "title":"Educación",
+        "Title":"Educación",
         name:{
             "1":"Ingeniería de Sistemas - Universidad Santa María",
             "2":"Computación científica con Python - FreeCodeCamp",
             "3":"Bases de Datos Relacionales - FreeCodeCamp",
-            "4":"English (Adults) as a Foreign Language - FUNDEIM",
+            "4":"English (Adults) as a Foreign Language - FUNDEIM (UCV)",
             "5":"Bootcamp de Desarrollo Web - UDEMY",
         },
         description:{
