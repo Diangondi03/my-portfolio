@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import { IoLanguage } from 'react-icons/io5'
 import { MdDarkMode, MdLightMode } from 'react-icons/md'
 import { Link, Outlet } from 'react-router'
 import { Button } from '../components/ui/button'
 import { LinkType } from '../utils/interfaces'
-
-
+import { IndexContext } from '../IndexContext'
 
 const links : LinkType[] = [
   { name: 'Home', path: '/' },
@@ -15,10 +14,13 @@ const links : LinkType[] = [
   { name: 'Contact', path: '/contact' },
 ]
 
+
+
 const Layout = () => {
   const [darkMode,setDarkMode] = useState(localStorage.getItem('dark-mode'))
+  const {sectionIndex,handleLinkClick} = useContext(IndexContext)
+
   useEffect(() => { 
-    setSectionIndex(getSectionIndex())
     const body = document.body
     if (!darkMode){
 
@@ -31,19 +33,8 @@ const Layout = () => {
   }
   , [darkMode])
 
-  const getSectionIndex = () => {
-    const path = window.location.pathname
-    for (let i = 0; i < links.length; i++) {
-      if (links[i].path === path) {
-        return i
-      }
-    }
-    
-  }
-  const [sectionIndex, setSectionIndex] = useState(getSectionIndex())
-  const handleLinkClick = (index:number) => {
-    setSectionIndex(index)
-  }
+  
+  
   const toggleDarkMode = () => {
     const body = document.body
     body.classList.toggle('dark')

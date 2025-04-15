@@ -9,6 +9,7 @@ import Projects from './pages/Projects.tsx'
 import Education from './pages/Education.tsx'
 import Contact from './pages/Contact.tsx'
 import Project from './pages/Project.tsx'
+import { IndexProvider } from './IndexContext.tsx'
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -18,6 +19,8 @@ if (!rootElement) {
 createRoot(rootElement).render(
   <StrictMode>
     <BrowserRouter>
+      <IndexProvider>
+
         <Routes>
 
           <Route path="/" element={<Layout />}>
@@ -28,6 +31,7 @@ createRoot(rootElement).render(
             <Route path="/project/:projectId" element={<Project />} />
           </Route>
         </Routes>
+      </IndexProvider>
        
       
     </BrowserRouter>

@@ -125,3 +125,24 @@
 .dark img:hover{
   filter: opacity(1);
 }
+
+@font-face {
+  font-family: "Boldonse";
+  src: url("./assets/fonts/Boldonse-Regular.woff2") format("woff2"),
+       url("./assets/fonts/Boldonse-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter-Regular.woff2") format("woff2"),
+       url("./assets/fonts/Inter-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+html{
+  font-family: "Inter", sans-serif;
+
+}

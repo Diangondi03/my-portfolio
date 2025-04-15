@@ -1,4 +1,3 @@
-import { SchoolIcon, StarIcon, WorkflowIcon } from 'lucide-react';
 import React from 'react'
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import '../../node_modules/react-vertical-timeline-component/style.min.css';
@@ -45,7 +44,7 @@ const EducationTimeLine : EducationItem[] = [
 const Education = () => {
   return (
     <>
-        <h1 className='text-center text-3xl font-bold my-10'>Education</h1>
+        <h1 className='text-center text-4xl font-bold my-10'>Education</h1>
         <VerticalTimeline lineColor="rgb(75, 85, 255)">
             
             {EducationTimeLine.map((item, index) => (

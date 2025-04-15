@@ -8,9 +8,9 @@ import { FaPhoneAlt } from "react-icons/fa";
 const Contact = () => {
   return (
     <>
-        <h1 className='text-center text-3xl font-bold my-10'>Contact</h1>
+        <h1 className='text-center text-4xl font-bold my-10'>Contact</h1>
         
-        <p className='text-center text-lg mb-12 max-w-md mx-auto'> 
+        <p className='text-center text-lg md:text-2xl mb-12 max-w-xl mx-auto'> 
           Feel free to reach out! You can connect with me through the following platforms or contact me directly.
         </p>
 
