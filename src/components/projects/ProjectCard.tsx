@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Card } from '../ui/card';
 import { Button } from '../ui/button';
 import { IoLogoGithub } from 'react-icons/io5';
 import { projectDataType } from '../../utils/interfaces';
 import { Link, useNavigate } from 'react-router';
+import { animate } from 'animejs';
 
 type ProjectCardProps = {
     project: projectDataType;
@@ -12,9 +13,58 @@ type ProjectCardProps = {
 
 const ProjectCard = ({project,index}: ProjectCardProps) => {
     const navigate = useNavigate()
+
+    const cardRef = useRef<HTMLDivElement>(null);
+    const [hasAnimated, setHasAnimated] = useState(false);
+
+    useEffect(() => {
+        const currentRef = cardRef.current; // Capture ref value
+
+        if (!currentRef) return; // Exit if ref is not attached yet
+
+        // Set initial state before animation (invisible and translated)
+        currentRef.style.opacity = '0';
+
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                // Check if the element is intersecting and hasn't animated yet
+                if (entry.isIntersecting && !hasAnimated) {
+                    setHasAnimated(true); // Mark as animated
+                    animate(
+                        currentRef,
+                        {
+                        opacity: [0, 1],
+                        translateY: [500, 0],
+                        scale: [0, 1],
+                        duration: 500,
+                        easing: 'easeInOutQuad',
+                        
+                });
+                    observer.unobserve(currentRef); // Stop observing once animation is triggered
+                }
+            },
+            {
+                root: null, // Use the viewport as the root
+                rootMargin: '0px', // No margin
+                threshold: 0.2, // Trigger when 10% of the element is visible
+            }
+        );
+
+        observer.observe(currentRef);
+
+        // Cleanup function to unobserve when the component unmounts
+        return () => {
+            if (currentRef) {
+                observer.unobserve(currentRef);
+            }
+        };
+    }, [index, hasAnimated]); // Rerun effect if index changes (though unlikely needed here) or hasAnimated state changes
+
+
   return (
     <>
-        <div className={`mb-10 md:mb-16 ${index === 0 ? 'mt-0' : ''}`}>
+        <div ref={cardRef} className={`carta mb-10 md:mb-16 ${index === 0 ? 'mt-0' : ''} overflow-hidden`}>
             <Card className={`
             flex flex-col md:flex-row
             gap-6 md:gap-10 items-center /* Vertically align items */
