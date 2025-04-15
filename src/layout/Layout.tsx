@@ -6,6 +6,7 @@ import { Link, Outlet } from 'react-router'
 import { Button } from '../components/ui/button'
 import { LinkType } from '../utils/interfaces'
 import { IndexContext } from '../IndexContext'
+import Logo from "../assets/logo.png"
 
 const links : LinkType[] = [
   { name: 'Home', path: '/' },
@@ -44,42 +45,52 @@ const Layout = () => {
 
   return (
     <>
-        <nav className='p-4 mb-10'>
-          
-          <ul className='flex justify-center items-center gap-4 flex-wrap sm:justify-end sm:gap-6 md:gap-10'>
+        {/* Apply flexbox to the nav. Default to column layout for small screens, row for sm and up. */}
+        <nav className='p-4 mb-10 flex flex-col items-center gap-4 md:flex-row md:justify-between'>
+          {/* Logo */}
+          <img src={Logo} className='rounded-full h-10 aspect-square'/>
+
+          {/* Links and buttons container */}
+          {/* Use flex, wrap items, center them by default (for column layout), align end on sm screens (for row layout) */}
+          <ul className='flex items-center gap-4 flex-wrap justify-center md:justify-end md:gap-6 lg:gap-10'>
             {links.map((link, index) => (
-          <li key={link.name}>
-            <Link to={link.path} onClick={() => handleLinkClick(index)}>
-              
-              <Button
-            variant="link"
-            className={`link text-lg sm:text-xl hover:cursor-pointer transition-colors duration-200 ${sectionIndex === index ? "text-blue-400 font-semibold" : "text-foreground/80"}`}
-              >
-            {link.name}
-              </Button>
-            </Link>
-          </li>
+              // Prevent list items from shrinking
+              <li key={link.name} className='shrink-0'>
+                <Link to={link.path} onClick={() => handleLinkClick(index)}>
+                  <Button
+                    variant="link"
+                    className={`link text-lg sm:text-xl hover:cursor-pointer transition-colors duration-200 ${sectionIndex === index ? "text-blue-400 font-semibold" : "text-foreground/80"}`}
+                  >
+                    {link.name}
+                  </Button>
+                </Link>
+              </li>
             ))}
-            <li>
-          <Button variant='ghost' size="icon" className='hover:cursor-pointer text-xl rounded-full'>
-            <IoLanguage />
-          </Button>
+            {/* Prevent list items from shrinking */}
+            <li className='shrink-0'>
+              <Button variant='ghost' size="icon" className='hover:cursor-pointer text-xl rounded-full'>
+                <IoLanguage />
+              </Button>
             </li>
-            <li>
-          <Button variant='ghost' size="icon" className='hover:cursor-pointer text-xl rounded-full' onClick={toggleDarkMode}>
-            {darkMode === "enabled" ?
-              <MdLightMode /> : 
-              <MdDarkMode />  
-            }
-          </Button>
+            {/* Prevent list items from shrinking */}
+            <li className='shrink-0'>
+              <Button variant='ghost' size="icon" className='hover:cursor-pointer text-xl rounded-full' onClick={toggleDarkMode}>
+                {darkMode === "enabled" ?
+                  <MdLightMode /> :
+                  <MdDarkMode />
+                }
+              </Button>
             </li>
           </ul>
         </nav>
-        <div className='min-h-screen mx-5 md:mx-10'>
 
+        {/* Main content area */}
+        <div className='min-h-screen mx-5 md:mx-10'>
           <Outlet/>
         </div>
-        <footer className='bg-black text-white p-4 text-center'>
+
+        {/* Footer */}
+        <footer className='bg-black text-white p-4 text-center mt-10'> {/* Added margin-top */}
           <p>&copy; {new Date().getFullYear()} My Portfolio. All rights reserved.</p>
           <p>
             Built with <span className='text-blue-400'>React</span>.
