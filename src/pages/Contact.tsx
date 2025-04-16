@@ -17,7 +17,7 @@ const Contact = () => {
           {t("contact:Text")}
         </p>
 
-        <div className='flex flex-col items-center space-y-12'> 
+        <div className='flex flex-col items-center space-y-12 mb-10'> 
           <div className='flex justify-center space-x-12'> 
             <Link
               to='https://www.linkedin.com/in/diego-gonzalez-developer/'
@@ -47,7 +47,7 @@ const Contact = () => {
           </div>
 
           <div className='flex items-center space-x-4'> 
-             <FaPhoneAlt className='h-12 w-12' />
+             <FaPhoneAlt className='h-8 w-8' />
             <span className='font-semibold text-xl md:text-2xl'>+58 4127142428</span> 
           </div>
         </div>
