@@ -23,7 +23,7 @@ const Project = () => {
             navigate("/")
 
         }
-    },[])
+    },[projectId])
     const project = projectData[projectId-1]
     scrollTo(0,0)
     if(projectId>projectData.length || !projectId){

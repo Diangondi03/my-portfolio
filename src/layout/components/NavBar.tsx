@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useLayoutEffect, useState } from 'react'
 
 import { MdDarkMode, MdLightMode } from 'react-icons/md'
 import { Link} from 'react-router'
@@ -22,7 +22,7 @@ const NavBar = () => {
     const {sectionIndex,handleLinkClick} = useContext(IndexContext)
     // @ts-ignore
     const {t,i18n,changeLanguage} = useContext(LanguageContext)
-    useEffect(() => { 
+    useLayoutEffect(() => { 
       const body = document.body
       if (!darkMode){
   
@@ -64,17 +64,17 @@ const NavBar = () => {
               </li>
             ))}
             <li className='shrink-0'>
-              <Button variant='ghost' size="icon" className='hover:cursor-pointer text-xl rounded-full' onClick={changeLanguage}>
+              <Button variant='ghost' size="icon" className='hover:cursor-pointer text-xl rounded-full ' onClick={changeLanguage}>
                 <img src={i18n.language=="en" ? English : Spanish} className='h-6 w-6' alt='Language button'/>
               </Button>
             </li>
             <li className='shrink-0'>
-              <Button variant='ghost' size="icon" aria-label='theme' className='hover:cursor-pointer text-xl rounded-full' onClick={toggleDarkMode}>
+                <button  aria-label='theme' className='hover:cursor-pointer rounded-full [&_svg]:size-5 p-2 hover:bg-accent' onClick={toggleDarkMode}>
                 {darkMode === "enabled" ?
-                  <MdLightMode/> :
+                  <MdLightMode /> :
                   <MdDarkMode />
                 }
-              </Button>
+                </button>
             </li>
           </ul>
         </nav>

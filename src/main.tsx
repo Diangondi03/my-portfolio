@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import Home from './pages/Home.tsx'
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router'
+import { HashRouter, Navigate, Route, Routes } from 'react-router'
 import React, { lazy} from 'react';
 const Layout = lazy(() => import('./layout/Layout.tsx'));
 const Projects = lazy(() => import('./pages/Projects.tsx'));
@@ -20,7 +20,7 @@ if (!rootElement) {
 
 createRoot(rootElement).render(
   <StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <LanguageProvider>
 
       <IndexProvider>
@@ -41,6 +41,6 @@ createRoot(rootElement).render(
        
       </LanguageProvider>
       
-    </BrowserRouter>
+    </HashRouter>
   </StrictMode>,
 )
