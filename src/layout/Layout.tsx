@@ -16,7 +16,7 @@ const Layout = () => {
     <>
         <NavBar/>
 
-        <div className='min-h-screen mx-5 md:mx-10'>
+        <div className='mx-5 md:mx-10'>
           <Outlet/>
         </div>
         <Footer/>
