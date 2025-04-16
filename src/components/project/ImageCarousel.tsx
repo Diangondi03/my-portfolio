@@ -19,10 +19,10 @@ export function ImageCarousel({ images }: CarouselProps) {
       <CarouselContent>
         {images && images.map((image, index) => (
           <CarouselItem key={index}>
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex items-center justify-center ">
-                  <img src={`./projects/${image}`} alt={`image ${index+1}`} className="w-full h-full"/>
+            <div >
+              <Card className="p-0">
+                <CardContent className="flex items-center justify-center p-2 md:p-5">
+                  <img src={`./projects/${image}`} alt={`image ${index+1}`} className="w-full h-full rounded-md"/>
                 </CardContent>
               </Card>
             </div>
