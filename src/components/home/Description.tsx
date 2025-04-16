@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { LanguageContext } from '../../context/LanguageContext'
 
 const Description = () => {
+  //@ts-ignore
   const {t} = useContext(LanguageContext)
   return (
     <>

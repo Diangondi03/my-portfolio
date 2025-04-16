@@ -20,7 +20,7 @@
         "jsx":"react",
         "noEmit": true,
         "allowImportingTsExtensions": true,
-        
+        "target": "ES2024"
     }
   }
   

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import Photo from '../../assets/photo.png'
+import Photo from '../../assets/photo.webp'
 import { Button } from '../ui/button'
 import { useNavigate } from 'react-router'
 import { Name } from './Name'
@@ -14,7 +14,7 @@ const PhotoSection = () => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 p-4 md:p-8">
         <figure className='flex-shrink-0 h-28 w-28 md:h-48 md:w-48 lg:h-64 lg:w-64 rounded-full overflow-hidden shadow-lg'>
-          <img src={Photo} alt="Diego González" className="" />
+          <img src={Photo} loading='lazy' alt="Diego González"/>
         </figure>
         <div className='flex flex-col items-center'>
           <Name/>

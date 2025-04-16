@@ -21,8 +21,8 @@ export function ImageCarousel({ images }: CarouselProps) {
           <CarouselItem key={index}>
             <div className="p-1">
               <Card>
-                <CardContent className="flex  items-center justify-center ">
-                  <img src={`/projects/${image}`} className="w-full h-full"/>
+                <CardContent className="flex items-center justify-center ">
+                  <img src={`/projects/${image}`} alt={`image ${index+1}`} className="w-full h-full"/>
                 </CardContent>
               </Card>
             </div>

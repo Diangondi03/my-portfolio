@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import { VerticalTimeline}  from 'react-vertical-timeline-component';
 import '../../node_modules/react-vertical-timeline-component/style.min.css';
 import Universidad from "../assets/Universidad_Santa_María_logo.gif"
 import FreeCodeCamp from "../assets/freecodecamp-icon.svg"

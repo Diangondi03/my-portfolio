@@ -3,14 +3,14 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import Home from './pages/Home.tsx'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router'
-import Layout from './layout/Layout.tsx'
-import React from 'react'
-import Projects from './pages/Projects.tsx'
-import Education from './pages/Education.tsx'
-import Contact from './pages/Contact.tsx'
-import Project from './pages/Project.tsx'
-import { IndexProvider } from './context/IndexContext.tsx'
+import React, { lazy} from 'react';
+const Layout = lazy(() => import('./layout/Layout.tsx'));
+const Projects = lazy(() => import('./pages/Projects.tsx'));
+const Education = lazy(() => import('./pages/Education.tsx'));
+const Contact = lazy(() => import('./pages/Contact.tsx'));
+const Project = lazy(() => import('./pages/Project.tsx'));
 import "./i18.ts"
+import { IndexProvider } from './context/IndexContext.tsx'
 import { LanguageProvider } from './context/LanguageContext.tsx'
 
 const rootElement = document.getElementById('root');

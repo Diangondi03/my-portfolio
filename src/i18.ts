@@ -73,6 +73,10 @@ const resources = {
     contact:{
         "Title":"Contact",
         "Text":"Feel free to reach out! You can connect with me through the following platforms or contact me directly."
+    },
+    footer:{
+        "First":"My Portfolio. All rights reserved.",
+        "Second":"Built with "
     }
         
   },
@@ -147,6 +151,10 @@ const resources = {
     contact:{
         "Title":"Contacto",
         "Text":"¡No dudes en contactarme! Puedes contactarme a través de las siguientes plataformas o directamente."
+    },
+    footer:{
+        "First":"Mi Portafolio. Todos los derechos reservados.",
+        "Second":"Desarrollado con "
     }
   }
 };

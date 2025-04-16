@@ -128,18 +128,19 @@
 
 @font-face {
   font-family: "Boldonse";
-  src: url("./assets/fonts/Boldonse-Regular.woff2") format("woff2"),
-       url("./assets/fonts/Boldonse-Regular.ttf") format("truetype");
+  src: url("./assets/fonts/Boldonse-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Inter";
-  src: url("./assets/fonts/Inter_24pt-Regular.woff2") format("woff2"),
-       url("./assets/fonts/Inter_24pt-Regular.ttf") format("truetype");
+  src: url("./assets/fonts/Inter_24pt-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
+
 }
 
 html{

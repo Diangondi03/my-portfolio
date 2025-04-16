@@ -22,7 +22,7 @@ const TimeLineElement = ({item,index}: TimeLineElementProps) => {
               to={item.pageLink}
               target='_blank'
               >
-                <img src={item.icon} className='rounded-full w-full h-full transition-transform duration-200 hover:scale-105 cursor-pointer'/>
+                <img src={item.icon} alt={`${item.title} logo`} className='rounded-full w-full h-full transition-transform duration-200 hover:scale-105 cursor-pointer'/>
               </Link>
             }
           >

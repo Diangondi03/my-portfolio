@@ -82,6 +82,7 @@ const ProjectCard = ({project,index}: ProjectCardProps) => {
                 
                 <img 
                 src={`/projects/${project.images[0]}`} 
+                alt={project.name}
                 className="w-full h-full text-muted-foreground/50 group-hover:scale-110 transition-transform duration-300" />
                 
                 <span className='absolute bottom-2 left-2 text-xs bg-black/40 text-white px-1.5 py-0.5 rounded backdrop-blur-sm'>

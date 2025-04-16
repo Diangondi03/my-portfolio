@@ -21,7 +21,7 @@ const Skill = ({skillName}:{skillName:string}) => {
       <img
       src={`/skills/${skillName === 'C++' ? 'Cpp' : skillName}.svg`}
       alt={`${skillName} logo`}
-
+      loading='lazy'
       className={`w-16 h-16 mb-2 object-contain transition-transform duration-300 group-hover:scale-110 ${skillName == "GitHub" ? "dark:bg-white dark:rounded-full dark:p-[3px]" : ""}`}
       />
       <p className="text-lg font-semibold text-center">
