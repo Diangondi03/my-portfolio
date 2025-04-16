@@ -36,7 +36,7 @@ const Project = () => {
             <ImageCarousel images={project?.images}/>
             <p className='text-center text-lg text-gray-500 mt-5'>{t(`project:date:${projectId}`)}</p> {/* Added project date */}
 
-            <p className='text-2xl text-center my-15'>{t(`project:description:${projectId}`)}</p>
+            <p className='text-lg md:text-2xl text-center my-15'>{t(`project:description:${projectId}`)}</p>
             <Link to={project?.github} target="_blank" rel="noopener noreferrer">
 
                 <Button
