@@ -64,7 +64,7 @@ const ProjectCard = ({project,index}: ProjectCardProps) => {
 
   return (
     <>
-        <div ref={cardRef} className={`carta mb-10 md:mb-16 ${index === 0 ? 'mt-0' : ''} overflow-hidden`}>
+        <div ref={cardRef} className={`mb-10 md:mb-16 ${index === 0 ? 'mt-0' : ''} overflow-hidden`}>
             <Card className={`
             flex flex-col md:flex-row
             gap-6 md:gap-10 items-center 
@@ -81,7 +81,7 @@ const ProjectCard = ({project,index}: ProjectCardProps) => {
             className='w-full md:w-1/2 aspect-video bg-gradient-to-br from-muted via-background to-muted rounded-md flex items-center justify-center text-muted-foreground overflow-hidden relative group cursor-pointer'>
                 
                 <img 
-                src={`/projects/${project.images[0]}`} 
+                src={`./projects/${project.images[0]}`} 
                 alt={project.name}
                 className="w-full h-full text-muted-foreground/50 group-hover:scale-110 transition-transform duration-300" />
                 

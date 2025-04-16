@@ -22,7 +22,7 @@ export function ImageCarousel({ images }: CarouselProps) {
             <div className="p-1">
               <Card>
                 <CardContent className="flex items-center justify-center ">
-                  <img src={`/projects/${image}`} alt={`image ${index+1}`} className="w-full h-full"/>
+                  <img src={`./projects/${image}`} alt={`image ${index+1}`} className="w-full h-full"/>
                 </CardContent>
               </Card>
             </div>
