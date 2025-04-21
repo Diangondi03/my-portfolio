@@ -25,7 +25,7 @@ const Skills = () => {
     return (
         <>
             <h2 className='text-center text-4xl font-bold'>{t("home:Skills")}</h2>
-            <div className='flex flex-wrap justify-center items-center my-10 md:my-20 gap-4'>
+            <div className='flex flex-wrap justify-center items-center my-10 md:my-20 gap-0 sm:gap-4'>
                 {skillNames.map((skill, index) => {
                     return (
                         <Skill key={index} skillName={skill} />
