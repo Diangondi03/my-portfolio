@@ -20,10 +20,11 @@ const skillNames : string[] = [
 ]
 
 const Skills = () => {
+    //@ts-ignore
     const {t} = useContext(LanguageContext)
     return (
         <>
-            <h2 className='text-center text-3xl font-bold'>{t("home:Skills")}</h2>
+            <h2 className='text-center text-4xl font-bold'>{t("home:Skills")}</h2>
             <div className='flex flex-wrap justify-center items-center my-10 md:my-20 gap-4'>
                 {skillNames.map((skill, index) => {
                     return (

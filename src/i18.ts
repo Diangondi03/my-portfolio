@@ -8,12 +8,16 @@ const resources = {
     home: {
         "Role":"Software Engineer",
         "ContactMe": "Contact Me",
+        "Resume": "Download Resume",
+
         "Description":"Hello! I'm a software engineer passionate about creating efficient and scalable solutions. I enjoy tackling challenging problems and continuously learning new technologies.",
         "Skills" : "Skills",
         "Languages": "Languages",
         "English" : "English",
         "Spanish" : "Spanish",
         "Native" : "Native",
+
+        
         
     },
     nav:{
@@ -88,12 +92,10 @@ const resources = {
         "Contact" : "Contacto",
     },
     home: {
-        "Home": "Inicio",
-        "Projects": "Proyectos",
-        "Education": "Educación",
-        "Contact" : "Contacto",
+
         "Role": "Ingenierio de Software",
         "ContactMe": "Contactar",
+        "Resume": "Descargar CV",
         "Description":"¡Hola! Soy ingeniero de software y me apasiona crear soluciones eficientes y escalables. Disfruto abordando problemas desafiantes y aprendiendo constantemente nuevas tecnologías.",
         "Skills" : "Habilidades",
         "Languages": "Idiomas",

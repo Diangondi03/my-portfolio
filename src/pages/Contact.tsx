@@ -13,7 +13,7 @@ const Contact = () => {
     <>
         <h1 className='text-center text-4xl font-bold my-10'>{t("contact:Title")}</h1>
         
-        <p className='text-center text-lg md:text-2xl mb-12 max-w-xl mx-auto'> 
+        <p className='text-center text-lg md:text-2xl mb-12 max-w-xl mx-auto leading-10'> 
           {t("contact:Text")}
         </p>
 
