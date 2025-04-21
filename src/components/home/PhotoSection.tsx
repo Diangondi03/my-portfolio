@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router'
 import { Name } from './Name'
 import { IndexContext } from '../../context/IndexContext'
 import { LanguageContext } from '../../context/LanguageContext'
-import {Download, User } from 'lucide-react'
+import {Download} from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
 
 const PhotoSection = () => {
