@@ -46,7 +46,7 @@ const resources = {
             "5":"January 2024",
         },
         description:{
-            "1":"My software developer portfolio, built with React and TypeScript. Showcases my projects, skills, and experience.",
+            "1":"My software developer portfolio, built with React and TypeScript. Showcases my projects, skills, and experience. You can change the language in the top right corner of the page.",
             "2":"Ecommerce built in React with TypeScript, Tailwind and HeroUI components. Product data is fetched from FakeStore API, users are stored in a Firebase Database.",
             "3":"X clone built using HTML, CSS, JavaScript, React.js, Node.js, Bootstrap, React-JSS, Material UI and PostgreSQL. It allows to create users, users can create, edit and delete posts. They can also like, repost, comment and bookmark someone else's posts.",
             "4":"Weather app build with React, TypeScript and shadcn, styled with Tailwind CSS. Data fetched by Weather API.",
@@ -80,7 +80,7 @@ const resources = {
     },
     footer:{
         "First":"My Portfolio. All rights reserved.",
-        "Second":"Built with "
+        
     }
         
   },
@@ -124,7 +124,7 @@ const resources = {
             "5":"Enero 2024",
         },
         description:{
-            "1":"Mi portafolio de desarrollo de software, creado con React y TypeScript, muestra mis proyectos, habilidades y experiencia.",
+            "1":"Mi portafolio de desarrollo de software, creado con React y TypeScript, muestra mis proyectos, habilidades y experiencia. Puedes cambiar el idioma en la esquina superior derecha de la página.",
             "2":"Comercio electrónico desarrollado en React con componentes TypeScript, Tailwind y HeroUI. Los datos de los productos se obtienen de la API de FakeStore y los usuarios se almacenan en una base de datos de Firebase.",
             "3":'Clon de X desarrollado con HTML, CSS, JavaScript, React.js, Node.js, Bootstrap, React-JSS, Material UI y PostgreSQL. Permite crear usuarios, quienes pueden crear, editar y eliminar publicaciones. También pueden dar "me gusta", reenviar, comentar y guardar en marcadores las publicaciones de otros.',
             "4":"Aplicación meteorológica desarrollada con React, TypeScript y shadcn, con estilo Tailwind CSS. Datos obtenidos mediante la API meteorológica.",
@@ -156,7 +156,7 @@ const resources = {
     },
     footer:{
         "First":"Mi Portafolio. Todos los derechos reservados.",
-        "Second":"Desarrollado con "
+        
     }
   }
 };
