@@ -20,7 +20,7 @@ const PhotoSection = () => {
           <p className='text-center  text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-400 my-3 md:my-4 font-bold'>
             {t("home:Role")}
           </p>
-            <div className='flex items-center gap-10 justify-center'>
+            <div className='flex flex-col sm:flex-row items-center gap-2 sm:gap-10 justify-center'>
 
               <Button
               onClick={()=>{
