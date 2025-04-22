@@ -14,9 +14,7 @@ const Skill = ({skillName}:{skillName:string}) => {
       shadow-md hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-blue-300/50
       transform transition-all duration-300 ease-in-out hover:rotate-3
       hover:-translate-y-1.5 hover:scale-105
-      focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-800
-      cursor-pointer group
-      "
+      focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-800"
     >
       <img
       src={`./skills/${skillName === 'C++' ? 'Cpp' : skillName}.svg`}
