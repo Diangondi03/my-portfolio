@@ -8,7 +8,7 @@ import { IndexContext } from '../../context/IndexContext'
 import Logo from "../../assets/logo.webp"
 import { LanguageContext } from '../../context/LanguageContext'
 import English from "../../assets/english.svg"
-import Spanish from "../../assets/Spanish.svg"
+import Spanish from "../../assets/spanish.svg"
 
 const links : LinkType[] = [
   { name: 'Home', path: '/' },
