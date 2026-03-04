@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useLayoutEffect, useState } from 'react'
+import React, { useContext, useLayoutEffect, useState } from 'react'
 
 import { MdDarkMode, MdLightMode } from 'react-icons/md'
 import { Link} from 'react-router'
@@ -45,18 +45,19 @@ const NavBar = () => {
     }
 
   return (
-    <nav className='p-4 mb-10 flex flex-col items-center gap-4 md:flex-row md:justify-between'>
-          <img src={Logo} loading='lazy' className='rounded-full h-10 aspect-square' alt='personal logo'/>
+    <header className='sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md'>
+      <nav className='w-full max-w-6xl mx-auto px-4 md:px-8 py-3 flex flex-col items-center gap-4 md:flex-row md:justify-between'>
+          <img src={Logo} loading='lazy' className='rounded-full h-11 aspect-square ring-2 ring-border/60' alt='personal logo'/>
 
           
-          <ul className='flex  items-center gap-6 sm:gap-4 flex-wrap justify-center md:justify-end md:gap-6 lg:gap-10'>
+          <ul className='flex items-center gap-2 sm:gap-3 flex-wrap justify-center md:justify-end rounded-2xl border border-border/70 bg-card/70 backdrop-blur-sm px-3 py-2'>
             {links.map((link, index) => (
               <li key={link.name} className='shrink-0'>
                 <Link to={link.path} onClick={() => handleLinkClick(index)}>
                   <Button
-                    variant="link"
+                    variant="ghost"
                     
-                    className={`link text-lg sm:text-xl hover:cursor-pointer transition-colors duration-200 ${sectionIndex === index ? "text-blue-400 font-semibold" : "text-foreground/80"}`}
+                    className={`text-sm sm:text-base rounded-xl px-4 hover:cursor-pointer transition-colors duration-200 ${sectionIndex === index ? "bg-primary text-white hover:text-white font-semibold hover:bg-primary " : "text-foreground/80 hover:text-foreground hover:bg-accent/70"}`}
                   >
                     {t(`nav:${link.name}`)}
                   </Button>
@@ -66,7 +67,7 @@ const NavBar = () => {
             <li className='shrink-0'>
                 <button
                 aria-label='language toggle'
-                className='relative inline-flex items-center justify-center rounded-full p-2 hover:bg-accent focus:outline-none transition-colors duration-200 w-9 h-9 overflow-hidden cursor-pointer' 
+                className='relative inline-flex items-center justify-center rounded-xl p-2 hover:bg-accent focus:outline-none transition-colors duration-200 w-10 h-10 overflow-hidden cursor-pointer border border-border/60 bg-background/70' 
                 onClick={changeLanguage}
                 >
                 <img
@@ -92,7 +93,7 @@ const NavBar = () => {
             <li className='shrink-0'>
                 <button
                   aria-label='theme toggle'
-                  className='relative inline-flex items-center justify-center rounded-full p-2 hover:bg-accent focus:outline-none transition-colors duration-200 w-9 h-9 overflow-hidden cursor-pointer' // Added size, centering, overflow
+                  className='relative inline-flex items-center justify-center rounded-xl p-2 hover:bg-accent focus:outline-none transition-colors duration-200 w-10 h-10 overflow-hidden cursor-pointer border border-border/60 bg-background/70'
                   onClick={toggleDarkMode}
                 >
                   <MdLightMode
@@ -113,6 +114,7 @@ const NavBar = () => {
             </li>
           </ul>
         </nav>
+    </header>
   )
 }
 

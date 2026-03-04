@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import Linkedin from '../../public/skills/linkedin.svg'
 import GitHub from '../../public/skills/GitHub.svg'
 import { IoIosMail } from "react-icons/io";
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import { LanguageContext } from '../context/LanguageContext';
 
 const Contact = () => {
@@ -41,15 +41,29 @@ const Contact = () => {
             </Link>
           </div>
 
-          <div className='flex items-center space-x-4'> 
-             <IoIosMail className='h-12 w-12' />
-            <span className='font-semibold text-xl md:text-2xl'>diegoagd2003@gmail.com</span> 
-          </div>
+            <div className='flex items-center space-x-4'>
+              <IoIosMail className='h-12 w-12' />
+            <a
+              href="mailto:diegoagd2003@gmail.com"
+              className="flex items-center space-x-4 transition-transform duration-200 hover:scale-110"
+              aria-label="Send email"
+            >
+              <span className='font-semibold text-xl md:text-2xl'>diegoagd2003@gmail.com</span>
+            </a>
+            </div>
 
-          <div className='flex items-center space-x-4'> 
-             <FaPhoneAlt className='h-8 w-8' />
-            <span className='font-semibold text-xl md:text-2xl'>+58 4127142428</span> 
-          </div>
+            <div className='flex items-center space-x-4'>
+              <FaWhatsapp className='h-8 w-8' />
+            <a
+              href="https://wa.me/584127142428"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-4 transition-transform duration-200 hover:scale-110 underline text-blue-600"
+              aria-label="WhatsApp"
+            >
+              <span className='font-semibold text-xl md:text-2xl'>+58 4127142428</span>
+            </a>
+            </div>
         </div>
     </>
   )
